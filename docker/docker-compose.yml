@@ -1,0 +1,14 @@
+version: '1'
+services:
+  postgres:
+    image: postgres:16.0
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db_hotel
+    volumes:
+      - db_data_hotel:/var/lib/postgresql/data
+volumes:
+  db_data_hotel:
