@@ -1,9 +1,6 @@
 package com.skillbox.hotelbookingservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,16 +19,22 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String announcementTitle;
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
     private String address;
 
+    @Column(nullable = false)
     private double distanceFromCityCenter;
 
+    @Column(nullable = false)
     private double rating;
 
     private int numberOfRatings;
