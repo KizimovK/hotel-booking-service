@@ -32,10 +32,10 @@ public class Hotel {
     private String address;
 
     @Column(nullable = false)
-    private double distanceFromCityCenter;
+    private Float distanceFromCityCenter;
 
-    @Column(nullable = false)
-    private double rating;
 
-    private int numberOfRatings;
+    private Float rating;
+
+    private Integer numberOfRatings;
 }
