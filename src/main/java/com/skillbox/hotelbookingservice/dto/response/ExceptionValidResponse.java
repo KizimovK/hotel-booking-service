@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -12,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class ExceptionValidResponse {
 
-    private Set<ValidResponse> validationResponses;
+    private Set<ValidResponse> validationResponses = new HashSet<>();
 
     public void addValidResponse(ValidResponse validResponse) {
         if (validResponse != null) {

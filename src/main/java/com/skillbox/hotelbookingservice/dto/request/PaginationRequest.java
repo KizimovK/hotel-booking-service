@@ -11,11 +11,11 @@ public class PaginationRequest {
 
     @NotNull
     @Positive
-    private int pageSize;
+    private int pageSize = 10;
 
     @NotNull
     @PositiveOrZero
-    private int pageNumber;
+    private int pageNumber = 0;
 
     public PageRequest pageRequest() {
         return PageRequest.of(pageNumber, pageSize);

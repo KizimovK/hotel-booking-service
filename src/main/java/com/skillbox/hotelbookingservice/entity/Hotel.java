@@ -1,17 +1,12 @@
 package com.skillbox.hotelbookingservice.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.UUID;
+import java.util.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@Getter
+@Setter
 @Entity
 public class Hotel {
 
@@ -22,7 +17,7 @@ public class Hotel {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String announcementTitle;
 
     @Column(nullable = false)
@@ -34,8 +29,16 @@ public class Hotel {
     @Column(nullable = false)
     private Float distanceFromCityCenter;
 
-
     private Float rating;
 
     private Integer numberOfRatings;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @Builder.Default
+    List<Room> rooms = new ArrayList<>();
+
+    public void addRoom(Room room){
+        room.setHotel(this);
+        rooms.add(room);
+    }
 }

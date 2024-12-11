@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "f179078e-0b56-4c67-b284-35be2e3c0ad0",
+		"name": "Hotel Booking Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26049245"
+	},
+	"item": [
+		{
+			"name": "hotel",
+			"item": [
+				{
+					"name": "insert hotel 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Гранд Отель\",\n    \"announcementTitle\" : \"Роскошный отдых в центре города!\",\n    \"city\" : \"Москва\",\n    \"address\" : \"ул. Тверская, д. 12\",\n    \"distanceFromCityCenter\" : \"0.5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/insert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert hotel 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Олимпия\",\n    \"announcementTitle\": \"Гостиница «Олимпия» расположилась в Саратове. Является одним из первых и известных в городе гостиничных комплексов. В числе удобств круглосуточный ресепшен и общественная парковка рядом.\",\n    \"city\": \"Саратов\",\n    \"address\": \"ул. Чернышевского, д. 61\",\n    \"distanceFromCityCenter\": 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/insert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find All Hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/6d6b63a7-2051-4df5-9670-87f87a8b4c6a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"6d6b63a7-2051-4df5-9670-87f87a8b4c6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Олимпия 2\",\n    \"announcementTitle\": \"Гостиница «Олимпия» расположилась в Саратове. Является одним из первых и известных в городе гостиничных комплексов. В числе удобств круглосуточный ресепшен и общественная парковка рядом.\",\n    \"city\": \"Саратов\",\n    \"address\": \"ул. Чернышевского, д. 61а\",\n    \"distanceFromCityCenter\": 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/6d6b63a7-2051-4df5-9670-87f87a8b4c6a/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"6d6b63a7-2051-4df5-9670-87f87a8b4c6a",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete hotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/6d6b63a7-2051-4df5-9670-87f87a8b4c6a/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"6d6b63a7-2051-4df5-9670-87f87a8b4c6a",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "insert Room in Hotel",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "find by Id room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/room/867c2f96-8802-408b-837e-d6e61c643b3d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"room",
+								"867c2f96-8802-408b-837e-d6e61c643b3d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by Id room Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/room/867c2f96-8802-408b-837e-d6e61c643b3d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"room",
+								"867c2f96-8802-408b-837e-d6e61c643b3d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
