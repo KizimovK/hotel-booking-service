@@ -32,9 +32,9 @@ public class ExceptionControllerHandler {
         return exceptionValidResponse;
     }
 
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ExceptionResponse overException(EntityNotFoundException exception, WebRequest request){
+    public ExceptionResponse overException(Exception exception, WebRequest request){
         return buildExceptionResponse(exception, request);
     }
 

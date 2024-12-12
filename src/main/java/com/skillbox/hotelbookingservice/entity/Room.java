@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -30,9 +31,12 @@ public class Room {
     @Column(nullable = false)
     private int maxCapacity;
 
-    private Instant unavailableDateBegin;
-
-    private Instant unavailableDateEnd;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @JoinTable(name = "unavailable_dates",
+            joinColumns = @JoinColumn(name = "room_id"))
+    @Column(name = "dates", nullable = false)
+    @Builder.Default
+    List<Instant> unavailableDates;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "hotel_id")

@@ -7,9 +7,10 @@ import lombok.Data;
 @Data
 public class UpsertRoomRequest {
 
-    @NotNull
+    @NotBlank
     private String name;
-    @NotNull
+
+    @NotBlank
     private String description;
     @Positive
     private int number;
